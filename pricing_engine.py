@@ -171,3 +171,49 @@ class SmartPricingEngine:
             confidence += 0.05
         
         return max(0.0, min(1.0, round(confidence, 2)))
+    
+    def parse_transcript(self, transcript: str) -> Dict[str, Any]:
+        """Parse messy transcript into structured data"""
+        transcript = transcript.lower()
+        
+        room_type = 'bathroom' if 'bathroom' in transcript else 'unknown'
+        
+        
+        size_match = re.search(r'(\d+(\.\d+)?)\s*(m²|m2|sqm|square meters)', transcript)
+        room_size = float(size_match.group(1)) if size_match else 10.0  
+        
+        locations = list(self.city_multipliers.keys())
+        location = next((loc for loc in locations if loc in transcript), 'marseille')  
+        
+        if 'budget-conscious' in transcript or 'cheap' in transcript:
+            budget_preference = 'budget_conscious'
+        elif 'premium' in transcript or 'high-end' in transcript:
+            budget_preference = 'premium'
+        else:
+            budget_preference = 'standard'
+        
+        
+        task_keywords = {
+            'tile_removal': ['remove old tiles', 'tile removal'],
+            'plumbing': ['redo plumbing', 'plumbing for shower'],
+            'toilet_replacement': ['replace toilet'],
+            'vanity_installation': ['install vanity'],
+            'painting': ['repaint walls', 'paint'],
+            'floor_installation': ['lay new tiles', 'floor tiles']
+        }
+        tasks = [task for task, keywords in task_keywords.items() if any(kw in transcript for kw in keywords)]
+        
+        confidence_flags = []
+        if not size_match:
+            confidence_flags.append('room_size_estimated')
+        if not tasks:
+            confidence_flags.append('no_tasks_identified')
+        
+        return {
+            'room_type': room_type,
+            'room_size': room_size,
+            'location': location,
+            'budget_preference': budget_preference,
+            'tasks': tasks or ['general_renovation'],  
+            'confidence_flags': confidence_flags
+        }
