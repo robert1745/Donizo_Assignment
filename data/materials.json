@@ -1,0 +1,175 @@
+{
+  "tile_removal": {
+    "budget_conscious": {
+      "cost_per_m2": 15.0,
+      "items": ["disposal bags", "protective sheets", "basic tools"],
+      "supplier": "local_supply",
+      "quality_grade": "standard"
+    },
+    "standard": {
+      "cost_per_m2": 20.0,
+      "items": ["disposal bags", "protective sheets", "cleaning supplies", "dust containment"],
+      "supplier": "regional_supply",
+      "quality_grade": "good"
+    },
+    "premium": {
+      "cost_per_m2": 25.0,
+      "items": ["eco-friendly disposal", "premium protection", "deep cleaning", "HEPA filtration"],
+      "supplier": "premium_supply",
+      "quality_grade": "excellent"
+    }
+  },
+  "plumbing": {
+    "budget_conscious": {
+      "base_cost": 180.0,
+      "cost_per_m2": 25.0,
+      "items": ["basic pipes", "standard fittings", "sealants", "basic valves"],
+      "supplier": "local_supply",
+      "quality_grade": "standard",
+      "warranty_years": 2
+    },
+    "standard": {
+      "base_cost": 250.0,
+      "cost_per_m2": 35.0,
+      "items": ["quality pipes", "standard fittings", "premium sealants", "shutoff valves", "pipe insulation"],
+      "supplier": "regional_supply",
+      "quality_grade": "good",
+      "warranty_years": 5
+    },
+    "premium": {
+      "base_cost": 400.0,
+      "cost_per_m2": 50.0,
+      "items": ["premium pipes", "brass fittings", "high-end fixtures", "smart shutoffs", "premium insulation"],
+      "supplier": "premium_supply",
+      "quality_grade": "excellent",
+      "warranty_years": 10
+    }
+  },
+  "toilet_replacement": {
+    "budget_conscious": {
+      "base_cost": 120.0,
+      "items": ["basic toilet", "wax ring", "bolts", "supply line", "basic seat"],
+      "supplier": "local_supply",
+      "quality_grade": "standard",
+      "water_efficiency": "standard"
+    },
+    "standard": {
+      "base_cost": 280.0,
+      "items": ["mid-range toilet", "wax ring", "stainless bolts", "braided supply line", "soft-close seat"],
+      "supplier": "regional_supply",
+      "quality_grade": "good",
+      "water_efficiency": "dual_flush"
+    },
+    "premium": {
+      "base_cost": 650.0,
+      "items": ["high-end toilet", "premium wax ring", "brass bolts", "premium supply line", "bidet features", "smart seat"],
+      "supplier": "premium_supply",
+      "quality_grade": "excellent",
+      "water_efficiency": "ultra_low_flow"
+    }
+  },
+  "vanity_installation": {
+    "budget_conscious": {
+      "base_cost": 200.0,
+      "cost_per_m2": 15.0,
+      "items": ["basic vanity", "standard sink", "basic faucet", "mounting hardware", "basic mirror"],
+      "supplier": "local_supply",
+      "quality_grade": "standard",
+      "storage_type": "basic"
+    },
+    "standard": {
+      "base_cost": 450.0,
+      "cost_per_m2": 25.0,
+      "items": ["quality vanity", "ceramic sink", "mid-range faucet", "quality hardware", "framed mirror", "soft-close drawers"],
+      "supplier": "regional_supply",
+      "quality_grade": "good",
+      "storage_type": "organized"
+    },
+    "premium": {
+      "base_cost": 900.0,
+      "cost_per_m2": 40.0,
+      "items": ["custom vanity", "designer sink", "premium faucet", "soft-close drawers", "LED mirror", "premium countertop"],
+      "supplier": "premium_supply",
+      "quality_grade": "excellent",
+      "storage_type": "luxury"
+    }
+  },
+  "painting": {
+    "budget_conscious": {
+      "cost_per_m2": 8.0,
+      "items": ["basic paint", "primer", "brushes", "drop cloths", "basic rollers"],
+      "supplier": "local_supply",
+      "quality_grade": "standard",
+      "finish_type": "matte"
+    },
+    "standard": {
+      "cost_per_m2": 12.0,
+      "items": ["quality paint", "premium primer", "quality brushes", "painter tape", "drop cloths", "professional rollers"],
+      "supplier": "regional_supply",
+      "quality_grade": "good",
+      "finish_type": "satin"
+    },
+    "premium": {
+      "cost_per_m2": 18.0,
+      "items": ["premium paint", "high-end primer", "professional brushes", "specialty finishes", "complete protection", "texture tools"],
+      "supplier": "premium_supply",
+      "quality_grade": "excellent",
+      "finish_type": "custom"
+    }
+  },
+  "floor_installation": {
+    "budget_conscious": {
+      "cost_per_m2": 35.0,
+      "items": ["basic ceramic tiles", "standard adhesive", "basic grout", "spacers", "basic trim"],
+      "supplier": "local_supply",
+      "quality_grade": "standard",
+      "tile_type": "ceramic"
+    },
+    "standard": {
+      "cost_per_m2": 55.0,
+      "items": ["quality ceramic tiles", "premium adhesive", "quality grout", "leveling systems", "sealer", "transition strips"],
+      "supplier": "regional_supply",
+      "quality_grade": "good",
+      "tile_type": "porcelain"
+    },
+    "premium": {
+      "cost_per_m2": 85.0,
+      "items": ["designer tiles", "premium adhesive", "epoxy grout", "leveling systems", "premium sealer", "custom trim"],
+      "supplier": "premium_supply",
+      "quality_grade": "excellent",
+      "tile_type": "natural_stone"
+    }
+  },
+  "suppliers": {
+    "local_supply": {
+      "delivery_cost": 25.0,
+      "delivery_time_days": 3,
+      "bulk_discount": 0.05,
+      "payment_terms": "net_30"
+    },
+    "regional_supply": {
+      "delivery_cost": 45.0,
+      "delivery_time_days": 5,
+      "bulk_discount": 0.08,
+      "payment_terms": "net_30"
+    },
+    "premium_supply": {
+      "delivery_cost": 75.0,
+      "delivery_time_days": 7,
+      "bulk_discount": 0.10,
+      "payment_terms": "net_15"
+    }
+  },
+  "seasonal_adjustments": {
+    "spring": 1.1,
+    "summer": 1.15,
+    "fall": 1.0,
+    "winter": 0.95
+  },
+  "market_trends": {
+    "last_updated": "2024-12-01",
+    "inflation_rate": 0.08,
+    "supply_chain_factor": 1.12,
+    "demand_multiplier": 1.05
+  }
+}
